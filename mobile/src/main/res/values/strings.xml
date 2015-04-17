@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">PulseSafe</string>
 
-    <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <string name="section_people">People</string>
+    <string name="section_map">Map</string>
+    <string name="section_home">Home</string>
+
 </resources>
