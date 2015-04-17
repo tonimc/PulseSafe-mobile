@@ -1,8 +1,8 @@
-package com.catcoders.pulsesafe.mvp.presenter;
+package com.catcoders.pulsafe.mvp.presenter;
 
-import com.catcoders.pulsesafe.domain.interactor.GetListPersonsInteractor;
-import com.catcoders.pulsesafe.mvp.view.MVPView;
-import com.catcoders.pulsesafe.mvp.view.MapView;
+import com.catcoders.pulsafe.domain.interactor.GetListPersonsInteractor;
+import com.catcoders.pulsafe.mvp.view.MVPView;
+import com.catcoders.pulsafe.mvp.view.MapView;
 
 /**
  * Created by tonimc on 17/4/15.

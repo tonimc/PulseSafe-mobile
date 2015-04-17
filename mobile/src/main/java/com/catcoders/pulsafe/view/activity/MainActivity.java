@@ -1,11 +1,11 @@
-package com.catcoders.pulsesafe.view.activity;
+package com.catcoders.pulsafe.view.activity;
 
 import android.os.Bundle;
 
-import com.catcoders.pulsesafe.R;
-import com.catcoders.pulsesafe.view.fragments.HomeFragment;
-import com.catcoders.pulsesafe.view.fragments.MapFragment;
-import com.catcoders.pulsesafe.view.fragments.PeopleFragment;
+import com.catcoders.pulsafe.R;
+import com.catcoders.pulsafe.view.fragments.HomeFragment;
+import com.catcoders.pulsafe.view.fragments.MapFragment;
+import com.catcoders.pulsafe.view.fragments.PeopleFragment;
 
 import it.neokree.materialnavigationdrawer.MaterialNavigationDrawer;
 

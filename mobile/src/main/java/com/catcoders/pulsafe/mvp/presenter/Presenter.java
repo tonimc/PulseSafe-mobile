@@ -1,4 +1,4 @@
-package com.catcoders.pulsesafe.mvp.presenter;
+package com.catcoders.pulsafe.mvp.presenter;
 
 /**
  * Created by tonimc on 17/4/15.

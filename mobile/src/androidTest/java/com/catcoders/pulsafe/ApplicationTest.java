@@ -1,4 +1,4 @@
-package com.catcoders.pulsesafe;
+package com.catcoders.pulsafe;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

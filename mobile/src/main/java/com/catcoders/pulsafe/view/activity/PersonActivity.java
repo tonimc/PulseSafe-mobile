@@ -1,9 +1,9 @@
-package com.catcoders.pulsesafe.view.activity;
+package com.catcoders.pulsafe.view.activity;
 
 import android.content.Context;
 
-import com.catcoders.pulsesafe.model.entity.Person;
-import com.catcoders.pulsesafe.mvp.view.PersonsView;
+import com.catcoders.pulsafe.model.entity.Person;
+import com.catcoders.pulsafe.mvp.view.PersonsView;
 
 import java.util.List;
 

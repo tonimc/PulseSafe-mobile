@@ -1,4 +1,4 @@
-package com.catcoders.pulsesafe.view.fragments;
+package com.catcoders.pulsafe.view.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.catcoders.pulsesafe.R;
+import com.catcoders.pulsafe.R;
 
 
-public class PeopleFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    public PeopleFragment() {
+    public HomeFragment() {
         // Required empty public constructor
     }
 

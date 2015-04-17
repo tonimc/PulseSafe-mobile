@@ -1,4 +1,4 @@
-package com.catcoders.pulsesafe.view.fragments;
+package com.catcoders.pulsafe.view.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.catcoders.pulsesafe.R;
+import com.catcoders.pulsafe.R;
 
 
-public class HomeFragment extends Fragment {
+public class MapFragment extends Fragment {
 
-    public HomeFragment() {
+    public MapFragment() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
+        View v = inflater.inflate(R.layout.fragment_map, container, false);
         return v;
     }
 

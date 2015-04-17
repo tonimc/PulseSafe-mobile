@@ -1,6 +1,6 @@
-package com.catcoders.pulsesafe.mvp.view;
+package com.catcoders.pulsafe.mvp.view;
 
-import com.catcoders.pulsesafe.model.entity.Person;
+import com.catcoders.pulsafe.model.entity.Person;
 
 import java.util.List;
 

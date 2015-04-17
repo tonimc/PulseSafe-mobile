@@ -1,4 +1,4 @@
-package com.catcoders.pulsesafe.domain.interactor;
+package com.catcoders.pulsafe.domain.interactor;
 
 /**
  * Created by tonimc on 17/4/15.

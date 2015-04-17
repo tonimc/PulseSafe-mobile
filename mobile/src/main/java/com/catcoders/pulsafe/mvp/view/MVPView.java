@@ -1,4 +1,4 @@
-package com.catcoders.pulsesafe.mvp.view;
+package com.catcoders.pulsafe.mvp.view;
 
 /**
  * Base View
