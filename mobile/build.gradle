@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.catcoders.pulsesafe"
+        applicationId "com.catcoders.pulsafe"
         minSdkVersion 19
         targetSdkVersion 21
         versionCode 1

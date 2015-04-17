@@ -30,7 +30,7 @@ public class MainActivity extends Activity implements SensorEventListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Log.d(TAG, "On CREATE!");
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
         stub.setOnLayoutInflatedListener(new WatchViewStub.OnLayoutInflatedListener() {
@@ -43,8 +43,6 @@ public class MainActivity extends Activity implements SensorEventListener {
 
         mSensorManager = ((SensorManager)getSystemService(SENSOR_SERVICE));
         mHeartRateSensor = mSensorManager.getDefaultSensor(SENSOR_TYPE_HEARTRATE);
-        if(mHeartRateSensor == null)
-            Log.d(TAG, "heart rate sensor is null");
 
     }
 
@@ -72,6 +70,7 @@ public class MainActivity extends Activity implements SensorEventListener {
     @Override
     protected void onStop() {
         super.onStop();
+        Log.d(TAG, "Stop ");
         mSensorManager.unregisterListener(this);
     }
 }
