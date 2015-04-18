@@ -1,43 +1,43 @@
 package com.catcoders.pulsafe.view.fragments;
 
-import android.app.Fragment;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.catcoders.pulsafe.R;
-import com.catcoders.pulsafe.helper.MessageHelper;
 import com.catcoders.pulsafe.model.entity.Log;
 import com.catcoders.pulsafe.mvp.presenter.PeoplePresenter;
-import com.catcoders.pulsafe.mvp.view.PeopleView;
-import com.catcoders.pulsafe.view.activity.PersonActivity;
+import com.catcoders.pulsafe.view.activity.MainActivity;
 import com.catcoders.pulsafe.view.adapter.PeopleAdapter;
-import com.catcoders.pulsafe.view.listener.RecyclerViewClickListener;
-
-import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import mqttservice.mqtt.Client;
 
 
-public class DataFragment extends Fragment implements PeopleView, RecyclerViewClickListener {
+public class DataFragment extends Fragment {
 
     private PeopleAdapter mPeopleAdapter;
     private PeoplePresenter mPeoplePresenter;
 
-    @InjectView(R.id.progress_bar) ProgressBar mProgressBar;
-    @InjectView(R.id.people_list) RecyclerView mPeopleListRecyclerView;
+    @InjectView(R.id.et_user) protected EditText etUser;
+    @InjectView(R.id.et_latitude) protected EditText etLatitude;
+    @InjectView(R.id.et_longitude) protected EditText etLongitude;
+    @InjectView(R.id.et_bpm) protected EditText etBPM;
+
+    public static int MESSAGE_PUBLISH_INFO = 0;
+
+    private static String TAG = "DataFragement";
 
 
     public DataFragment() {
-        mPeoplePresenter = new PeoplePresenter(this);
+
+
     }
 
     @Override
@@ -45,88 +45,40 @@ public class DataFragment extends Fragment implements PeopleView, RecyclerViewCl
         super.onCreate(savedInstanceState);
 
 
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_people, container, false);
-
+        View view = inflater.inflate(R.layout.fragment_data, container, false);
         ButterKnife.inject(this, view);
-
-        mPeopleListRecyclerView.setHasFixedSize(true);
-        mPeopleListRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        mPeopleListRecyclerView.setItemAnimator(new DefaultItemAnimator());
-
 
         return view;
     }
 
-
-    @Override
-    public void showPersons(List<Log> people) {
-        mPeopleAdapter = new PeopleAdapter(people);
-        mPeopleAdapter.setRecyclerListListener(this);
-        mPeopleListRecyclerView.setAdapter(mPeopleAdapter);
-
+    private Client getMqttClient() {
+        return ((MainActivity)getActivity()).getMqttClient();
     }
 
-    @Override
-    public void showLoading() {
-        mProgressBar.setVisibility(View.VISIBLE);
-    }
-
-    @Override
-    public void hideLoading() {
-        mProgressBar.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void showError(String error) {
-
-    }
-
-    @Override
-    public void showLoadingLabel() {
-        MessageHelper.showMessage(getContext(), "Cargando");
+    public void publishInfo() {
+        if (getMqttClient() != null) {
+            Toast.makeText(getActivity(), "Creating message", Toast.LENGTH_SHORT).show();
+                Log log = new Log("",
+                        "HEARTRATE",
+                        1,
+                        etBPM.getText().toString(),
+                        etUser.getText().toString(),
+                        "(" + etLatitude.getText().toString() + "," + etLatitude.getText().toString() + ")");
+                getMqttClient().publish("pulsafe/users/" + etUser.getText() + "/HEARTRATE", Log.jsonSerialized(log));
+            android.util.Log.i(TAG, "Publicada info: " + Log.jsonSerialized(log));
+        }
+        else {
+            Toast.makeText(getActivity(), "App is no connected to broker", Toast.LENGTH_SHORT).show();
+        }
     }
 
 
-    @Override
-    public void hideError() {
 
-    }
-
-    @Override
-    public Context getContext() {
-        return getActivity();
-    }
-
-    @Override
-    public void onClick(View touchedView, int position, float touchedX, float touchedY) {
-
-        Intent personActivityIntent = new Intent (
-                getContext(), PersonActivity.class);
-
-        int id = mPeopleAdapter.getLogList().get(position).getId();
-        personActivityIntent.putExtra("id", id);
-    }
-
-
-    @Override
-    public void onStop() {
-
-        super.onStop();
-        mPeoplePresenter.start();
-    }
-
-    @Override
-    public void onStart() {
-
-        super.onStart();
-        mPeoplePresenter.start();
-    }
 
 }

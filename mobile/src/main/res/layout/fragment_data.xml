@@ -1,0 +1,75 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/activity_horizontal_margin">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="User" />
+        <EditText
+            android:id="@+id/et_user"
+            android:layout_weight="2"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="user_name"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="Latitude"/>
+        <EditText
+            android:id="@+id/et_latitude"
+            android:layout_weight="2"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="42.872345"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="Longitude" />
+        <EditText
+            android:id="@+id/et_longitude"
+            android:layout_weight="2"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="8.322456" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="BPM" />
+        <EditText
+            android:id="@+id/et_bpm"
+            android:layout_weight="2"
+            android:layout_width="0pt"
+            android:layout_height="wrap_content"
+            android:text="58"/>
+    </LinearLayout>
+
+</LinearLayout>

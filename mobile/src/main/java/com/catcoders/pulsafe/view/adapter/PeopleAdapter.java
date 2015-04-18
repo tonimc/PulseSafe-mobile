@@ -88,7 +88,7 @@ public class PeopleAdapter extends RecyclerView.Adapter<UserViewHolder> {
 
     private Log searchPerson(Log user) {
         for(Log l: mLogList) {
-            if(l.getId() == user.getId()) {
+            if(l.getUser() == user.getUser()) {
                 return l;
             }
         }

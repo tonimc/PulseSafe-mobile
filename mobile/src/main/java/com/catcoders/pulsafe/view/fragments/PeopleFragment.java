@@ -1,6 +1,6 @@
 package com.catcoders.pulsafe.view.fragments;
 
-import android.app.Fragment;
+import android.support.v4.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -64,12 +64,22 @@ public class PeopleFragment extends Fragment implements PeopleView, RecyclerView
         return view;
     }
 
+    public void addNewDataLog(Log data) {
+        mPeopleAdapter.addPerson(data);
+    }
+
+    public void addNewDataLog(String log) {
+        addNewDataLog(Log.jsonDeserialized(log));
+    }
+
 
     @Override
     public void showPersons(List<Log> people) {
-        mPeopleAdapter = new PeopleAdapter(people);
-        mPeopleAdapter.setRecyclerListListener(this);
-        mPeopleListRecyclerView.setAdapter(mPeopleAdapter);
+        if(mPeopleAdapter!=null) {
+            mPeopleAdapter = new PeopleAdapter(people);
+            mPeopleAdapter.setRecyclerListListener(this);
+            mPeopleListRecyclerView.setAdapter(mPeopleAdapter);
+        }
 
     }
 
