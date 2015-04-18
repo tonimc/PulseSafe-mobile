@@ -24,6 +24,7 @@ public class MainActivity extends MaterialNavigationDrawer  {
         this.addSection(newSection(getString(R.string.section_home), R.drawable.ic_home, new HomeFragment()));
         this.addSection(newSection(getString(R.string.section_people), R.drawable.ic_people, new PeopleFragment()));
         this.addSection(newSection(getString(R.string.section_map), R.drawable.ic_map, new MapFragment()));
+        this.addSection(newSection(getString(R.string.section_data), R.drawable.ic_people, new DataFragment()));
     }
 
 }

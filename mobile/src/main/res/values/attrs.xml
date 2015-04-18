@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HeartLogView">
+        <attr name="valueLog" format="string" localization="suggested" />
+        <attr name="unitLog" format="string"  />
+        <attr name="colorLog" format="color" />
+    </declare-styleable>
+
+</resources>

@@ -27,7 +27,7 @@ import butterknife.ButterKnife;
 import butterknife.InjectView;
 
 
-public class PeopleFragment extends Fragment implements PeopleView, RecyclerViewClickListener {
+public class DataFragment extends Fragment implements PeopleView, RecyclerViewClickListener {
 
     private PeopleAdapter mPeopleAdapter;
     private PeoplePresenter mPeoplePresenter;
@@ -36,7 +36,7 @@ public class PeopleFragment extends Fragment implements PeopleView, RecyclerView
     @InjectView(R.id.people_list) RecyclerView mPeopleListRecyclerView;
 
 
-    public PeopleFragment() {
+    public DataFragment() {
         mPeoplePresenter = new PeoplePresenter(this);
     }
 

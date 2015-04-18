@@ -6,5 +6,8 @@
     <string name="section_people">People</string>
     <string name="section_map">Map</string>
     <string name="section_home">Home</string>
+    <string name="log_unit_bps">BPS</string>
+    <string name="close">Cerrar</string>
+    <string name="section_data">Datos</string>
 
 </resources>

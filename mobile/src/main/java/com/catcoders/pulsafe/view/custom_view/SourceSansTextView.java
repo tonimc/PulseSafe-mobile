@@ -5,8 +5,8 @@ import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class LobsterTextView extends TextView {
-    public LobsterTextView(Context context) {
+public class SourceSansTextView extends TextView {
+    public SourceSansTextView(Context context) {
 
         super(context);
 
@@ -14,7 +14,7 @@ public class LobsterTextView extends TextView {
             init(context);
     }
 
-    public LobsterTextView(Context context, AttributeSet attrs) {
+    public SourceSansTextView(Context context, AttributeSet attrs) {
 
         super(context, attrs);
 
@@ -22,7 +22,7 @@ public class LobsterTextView extends TextView {
             init(context);
     }
 
-    public LobsterTextView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public SourceSansTextView(Context context, AttributeSet attrs, int defStyleAttr) {
 
         super(context, attrs, defStyleAttr);
 
@@ -33,7 +33,7 @@ public class LobsterTextView extends TextView {
 
     private void init(Context context) {
 
-        Typeface t = Typeface.createFromAsset(context.getAssets(), "Lobster-Regular.ttf");
+        Typeface t = Typeface.createFromAsset(context.getAssets(), "SourceSansPro.ttf");
         this.setTypeface(t);
     }
 }
